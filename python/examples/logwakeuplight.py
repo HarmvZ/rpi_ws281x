@@ -33,7 +33,8 @@ def colorWipe(strip, color, wait_ms=50):
 def logLightUp(strip, wait_ms=50):
     """Wipe color across display a pixel at a time."""
     for i in range(2550):
-        strip.setPixelColor(i, Color(i/10, i/10, i/10))
+        for j in range(strip.numPixels()):
+            strip.setPixelColor(j, Color(i/10, i/10, i/10))
         strip.show()
         time.sleep(wait_ms/1000.0)
 
